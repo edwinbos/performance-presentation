@@ -1,0 +1,22 @@
+.reveal .measure-performance__grid {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  justify-items: center;
+  max-height: 85%; }
+
+.reveal .measure-performance__image {
+  max-height: 40vh; }
+
+.reveal .javascript-execution__grid {
+  display: grid;
+  grid-template-columns: 40% 1fr;
+  grid-template-rows: 100vh;
+  justify-items: center; }
+
+.reveal .image-compression__grid {
+  display: grid;
+  grid-gap: 5%;
+  grid-template-columns: 30% 30% 30%;
+  height: 100vh; }

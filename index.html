@@ -1,0 +1,253 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/custom.css">
+		<link rel="stylesheet" href="css/theme/performance.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<h1>Front-End Performance</h1>
+				</section>
+
+				<section class="measure-performance">
+					<h2>Measure Performance</h2>
+					<div class="measure-performance__grid">
+						<img alt="Webpagetest" class="measure-performance__image" src="images/webpagetest.svg" />
+						<img alt="Pagespeed Insights" class="measure-performance__image" src="images/pagespeed-insights.png" />
+						<img alt="Lighthouse" class="measure-performance__image" src="images/pwa-lighthouse.png" />
+						<img alt="Devtools" class="measure-performance__image" src="images/devtools.png" />
+					</div>
+				</section>
+				<section>
+					<h2>Low-hanging fruits with PSI</h2>
+					<img alt="Bol.com Pagespeed Insights" src="images/bol-com-pagespeed.png"/>
+				</section>
+				<section>
+					<h2>See more with Lighthouse</h2>
+					<img alt="Medimarkt Lighthouse" src="images/lighthouse-mediamarkt.png"/>
+				</section>
+				<section>
+					<h2>Webpagetest</h2>
+					<img alt="VTWonen webpagetest" src="images/webpagetest-vtwonen.png"/>
+				</section>
+				<section>
+					<h2>Remove all the things</h2>
+					<img alt="Bol.com Pagespeed Insights" src="images/allthethings.jpg"/>
+				</section>
+				<section>
+					<h2>Remove not needed:</h2>
+					<ul>
+						<li>Javascript</li>
+						<li>CSS</li>
+						<li>Images</li>
+						<li>Fonts</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Coverage in Devtools</h2>
+					<img alt="Coverage in Devtools" src="images/coverage-ao-com.png"/>
+				</section>
+				<section>
+					<h2>Small, Smaller, Smallest</h2>
+					<p>Uncompressed jQuery = 270KB</p>
+					<div class="fragment">
+						<h3>Minified</h3>
+						<p>90KB</p>
+					</div>
+					<div class="fragment">
+						<h3>GZIP</h3>
+						<p>30KB</p>
+					</div>
+					<div class="fragment">
+						<h3>Brotli</h3>
+						<p>25KB</p>
+					</div>
+				</section>
+				<section>
+					<h2>Brotli Support</h2>
+					<img alt="Brotli, caniuse.com" src="images/brotli.png"/>
+				</section>
+				<section>
+					<h2>Brotli .htaccess</h2>
+					<pre><code># Specify Brotli-encoded assets
+<Files *.html.br>
+    AddType "text/html" .br
+    AddEncoding br .br
+</Files>
+# Specify gzip-encoded assets
+<Files *.html.gz>
+    AddType "text/html" .gz
+    AddEncoding gz .gz
+</Files></code></pre>
+				</section>
+				<section class="javascript-execution">
+					<h2>Javascript download &amp; execution</h2>
+					<div class="javascript-execution__grid">
+						<div>
+							<img alt="Javascript legend" src="images/js-legend.svg">
+						</div>
+						<div>
+							<div>
+								<h3>< script /></h3>
+								<img alt="Javascript script" src="images/js-script.svg">
+							</div>
+							<div class="fragment">
+								<h3>< script async /></h3>
+								<img alt="Javascript async" src="images/js-async.svg">
+							</div>
+							<div class="fragment">
+								<h3>< script defer /></h3>
+								<img alt="Javascript defer" src="images/js-defer.svg">
+							</div>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>Images</h2>
+					<img alt="Average Page Size in 2017, Source speedcurve.com" src="images/avg-page-size-2017.png"/><p>Source: speedcurve.com</p>
+				</section>
+				<section>
+					<h2>Optimize images</h2>
+					<ul>
+						<li>Image compression</li>
+						<li>WebP</li>
+						<li>&lt;Picture&gt;</li>
+						<li>Lazy loading</li>
+						<li>SVG</li>
+						<li>CDN</li>
+					</ul>
+				</section>
+				<section id="fragments" class="image-compression">
+					<h2>Image compression</h2>
+					<div  class="image-compression__grid">
+						<div>
+							<img alt="Yellow Car, 100% quality" src="images/car-100.jpg" style="flex: 0 0 30%" />
+							1024 x 683px<br/>100% JEPG<br/>862KB
+						</div>
+						<div class="fragment">
+							<img alt="Yellow Car, 50% quality" src="images/car-50.jpg" style="flex: 0 0 30%" />
+							1024 x 683px<br/>50% JPEG<br/>122KB
+						</div>
+						<div class="fragment">
+							<img alt="Yellow Car, 50% quality + 70% WebP" src="images/car-50.webp" style="flex: 0 0 30%" />
+							1024 x 683px<br/>WebP<br/>60KB
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>WebP .htaccess</h2>
+					<pre><code><IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{HTTP_ACCEPT} image/webp
+    RewriteCond %{DOCUMENT_ROOT}/$1.webp -f
+    RewriteRule ^(media.+)\.(jpe?g|png)$ $1.webp [T=image/webp,E=accept:1]
+</IfModule>
+
+<IfModule mod_headers.c>
+    Header append Vary Accept env=REDIRECT_accept
+</IfModule>
+
+AddType image/webp .webp</code></pre>
+				</section>
+				<section>
+					<h2>&lt;picture&gt;</h2>
+					<pre><code class="html"><picture>
+ <source srcset="banner-wide.png" media="(min-width: 600px)">
+ <img src="banner-narrow.png" alt="MDN">
+</picture></code></pre>
+				</section>
+				<section>
+					<h2>&lt;picture&gt; + webP</h2>
+					<pre><code class="html"><picture>
+  <source srcset="awesomeImage.webp" type="image/webp"> 
+  <img src="oldImage.jpg" alt="Power of webP">
+</picture></code></pre>
+				</section>
+				<section>
+					<h2>Lazy loading</h2>
+					<img alt="Lazy loading" src="images/lazyload.gif"/>
+				</section>
+				<section>
+					<h2>SVG</h2>
+					
+				</section>
+				<section>
+					<h2>CDN (Cloudinary)</h2>
+					<img alt="CDN VTWonen" src="images/cloudinary-vtwonen.png"/>
+				</section>
+				<section>
+					<h2>CDN (Cloudinary)</h2>
+					<img alt="CDN VTWonen" src="images/image-compression-vtwonen.png"/>
+				</section>
+				<section>
+					<h2>Fonts</h2>
+					No @font-face
+					<pre><code class="css">body {
+  font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, 
+               Roboto, Helvetica, Arial, sans-serif;
+}</code></pre>
+				</section>
+				<section>
+					<h2>Minimize amount of fonts</h2>
+					<div style="display: flex; justify-content: space-around;">
+						<div>
+							<img alt="Font with italic" src="images/font-with-embed-italic.png"/>
+							<p>Font with Italic</p>
+						</div>
+						<div>
+							<img alt="Font without italic" src="images/font-without-embed-italic.png"/>
+							<p>Font with Italic</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>font-display</h2>
+					<pre><code class="css">body {
+  font-display: swap;
+}</code></pre>
+				</section>
+				<section>
+					<h2>Preload</h2>
+					<pre><code class="html"><link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin /></code></pre>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
