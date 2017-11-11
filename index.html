@@ -28,7 +28,10 @@
 				<section>
 					<h1>Front-End Performance</h1>
 				</section>
-
+				<section>
+					<h2>Why speed matters</h2>
+					<img alt="Speed vs. Conversion" src="images/speed-vs-convserion.jpg" />
+				</section>
 				<section class="measure-performance">
 					<h2>Measure Performance</h2>
 					<div class="measure-performance__grid">
@@ -187,9 +190,43 @@ AddType image/webp .webp</code></pre>
 					<h2>Lazy loading</h2>
 					<img alt="Lazy loading" src="images/lazyload.gif"/>
 				</section>
-				<section>
+				<section class="svg">
 					<h2>SVG</h2>
-					
+					<div class="svg__grid">
+						<div>
+							<img alt="Fire PNG" height="256" src="images/CampFireStories.png" width="256" />
+							<p>PNG - 19KB</p>
+						</div>
+						<div>
+							<img alt="Fire SVG" height="256" src="images/fire.svg" width="256" />
+							<p>SVG - 5KB</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>SVGOMG</h2>
+					<img alt="SVGOMG" src="images/svgomg.png" />
+				</section>
+				<section class="svg">
+					<h2>SVG</h2>
+					<div class="svg__grid svg__grid--second">
+						<div>
+							<img alt="Fire PNG" height="256" src="images/CampFireStories.png" width="256" />
+							<p>PNG - 19KB</p>
+						</div>
+						<div>
+							<img alt="Fire SVG" height="256" src="images/fire.svg" width="256" />
+							<p>SVG - 5KB</p>
+						</div>
+						<div>
+							<img alt="Fire SVGO" height="256" src="images/fire-svgo.svg" width="256" />
+							<p>SVG - 1.8KB</p>
+						</div>
+					</div>
+				</section>
+				<section>
+					<h2>SVG vs. PNG</h2>
+					<img alt="SVG vs. PNG" src="images/svg-vs-png.png" />
 				</section>
 				<section>
 					<h2>CDN (Cloudinary)</h2>
@@ -223,12 +260,14 @@ AddType image/webp .webp</code></pre>
 				<section>
 					<h2>font-display</h2>
 					<pre><code class="css">body {
-  font-display: swap;
+  font-display: swap; // block, fallback, optional
 }</code></pre>
+					<img alt="" src="images/font-display.png">
 				</section>
 				<section>
 					<h2>Preload</h2>
 					<pre><code class="html"><link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin /></code></pre>
+					<img alt="" src="images/preload-financial-times.jpg">
 				</section>
 			</div>
 		</div>

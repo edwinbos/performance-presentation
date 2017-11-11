@@ -31,4 +31,19 @@
 			height: 100vh;
 		}
 	}
+
+	.svg {
+		&__grid {
+			align-items: center;
+			display: grid; 
+			grid-template-columns: 1fr 1fr;
+			grid-template-rows: 85vh;
+			justify-items: center;
+			max-height: 85%;
+		}
+
+		&__grid--second {
+			grid-template-columns: 1fr 1fr 1fr;
+		}
+	}
 }

@@ -20,3 +20,14 @@
   grid-gap: 5%;
   grid-template-columns: 30% 30% 30%;
   height: 100vh; }
+
+.reveal .svg__grid {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 85vh;
+  justify-items: center;
+  max-height: 85%; }
+
+.reveal .svg__grid--second {
+  grid-template-columns: 1fr 1fr 1fr; }
