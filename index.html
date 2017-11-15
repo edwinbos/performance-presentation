@@ -158,6 +158,13 @@
 					</div>
 				</section>
 				<section>
+					<h2>&lt;picture&gt; + webP</h2>
+					<pre><code class="html"><picture>
+  <source srcset="awesomeImage.webp" type="image/webp"> 
+  <img src="oldImage.jpg" alt="Power of webP">
+</picture></code></pre>
+				</section>
+				<section>
 					<h2>WebP .htaccess</h2>
 					<pre><code><IfModule mod_rewrite.c>
     RewriteEngine On
@@ -173,17 +180,19 @@
 AddType image/webp .webp</code></pre>
 				</section>
 				<section>
-					<h2>&lt;picture&gt;</h2>
-					<pre><code class="html"><picture>
- <source srcset="banner-wide.png" media="(min-width: 600px)">
- <img src="banner-narrow.png" alt="MDN">
-</picture></code></pre>
+					<h2>CDN (Cloudinary)</h2>
+					<img alt="CDN VTWonen" src="images/cloudinary-vtwonen.png"/>
 				</section>
 				<section>
-					<h2>&lt;picture&gt; + webP</h2>
+					<h2>CDN (Cloudinary)</h2>
+					<img alt="CDN VTWonen" src="images/image-compression-vtwonen.png"/>
+				</section>
+				<section>
+					<h2>&lt;picture&gt;</h2>
 					<pre><code class="html"><picture>
-  <source srcset="awesomeImage.webp" type="image/webp"> 
-  <img src="oldImage.jpg" alt="Power of webP">
+  <source srcset="extralarge.jpg" media="(min-width: 1000px)">
+  <source srcset="large.jpg" media="(min-width: 800px)">
+  <img srcset="medium.jpg" alt="…">
 </picture></code></pre>
 				</section>
 				<section>
@@ -229,14 +238,6 @@ AddType image/webp .webp</code></pre>
 					<img alt="SVG vs. PNG" src="images/svg-vs-png.png" />
 				</section>
 				<section>
-					<h2>CDN (Cloudinary)</h2>
-					<img alt="CDN VTWonen" src="images/cloudinary-vtwonen.png"/>
-				</section>
-				<section>
-					<h2>CDN (Cloudinary)</h2>
-					<img alt="CDN VTWonen" src="images/image-compression-vtwonen.png"/>
-				</section>
-				<section>
 					<h2>Fonts</h2>
 					No @font-face
 					<pre><code class="css">body {
@@ -268,6 +269,10 @@ AddType image/webp .webp</code></pre>
 					<h2>Preload</h2>
 					<pre><code class="html"><link rel="preload" href="font.woff2" as="font" type="font/woff2" crossorigin /></code></pre>
 					<img alt="" src="images/preload-financial-times.jpg">
+				</section>
+				<section>
+					<h2>Do not use font icons</h2>
+					
 				</section>
 			</div>
 		</div>
