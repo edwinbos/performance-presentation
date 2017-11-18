@@ -32,6 +32,10 @@
 					<h2>Why speed matters</h2>
 					<img alt="Speed vs. Conversion" src="images/speed-vs-convserion.jpg" />
 				</section>
+				<section>
+					<h2>Why speed matters</h2>
+					<img alt="Time to interactive" src="images/time-to-interactive.png" />
+				</section>
 				<section class="measure-performance">
 					<h2>Measure Performance</h2>
 					<div class="measure-performance__grid">
@@ -41,6 +45,7 @@
 						<img alt="Devtools" class="measure-performance__image" src="images/devtools.png" />
 					</div>
 				</section>
+				
 				<section>
 					<h2>Low-hanging fruits with PSI</h2>
 					<img alt="Bol.com Pagespeed Insights" src="images/bol-com-pagespeed.png"/>
@@ -124,6 +129,11 @@
 							</div>
 						</div>
 					</div>
+				</section>
+				<section>
+					<h2>Javascript execution</h2>
+					<img alt="Javascriot parse" src="images/javascript-parse.png"/>
+					<p>Source: https://medium.com/dev-channel/the-cost-of-javascript-84009f51e99e</p>
 				</section>
 				<section>
 					<h2>Images</h2>
@@ -237,13 +247,18 @@ AddType image/webp .webp</code></pre>
 					<h2>SVG vs. PNG</h2>
 					<img alt="SVG vs. PNG" src="images/svg-vs-png.png" />
 				</section>
-				<section>
+				<section class="no-fonts">
 					<h2>Fonts</h2>
 					No @font-face
 					<pre><code class="css">body {
   font-family: -apple-system, BlinkMacSystemFont, “Segoe UI”, 
                Roboto, Helvetica, Arial, sans-serif;
 }</code></pre>
+					<div class="no-fonts__grid">
+						<div><img alt="Apple - San Francisco" src="images/sf.jpg"></div>
+						<div><img alt="Google - Roboto" src="images/roboto.jpg"></div>
+						<div><img alt="Microsoft - Segoe" src="images/segoe.jpg"></div>
+					</div>
 				</section>
 				<section>
 					<h2>Minimize amount of fonts</h2>
@@ -259,6 +274,22 @@ AddType image/webp .webp</code></pre>
 					</div>
 				</section>
 				<section>
+					<h2>Do not use font icons</h2>
+					<img alt="Font Awesome Size" src="images/font-awesome.png" />
+				</section>
+				<section class="no-font-icons">
+					<h2>Do not use font icons</h2>
+					<div class="no-font-icons__grid">
+						<div>
+							<img alt="Font Awesome Site" src="images/font-awesome-site.png" />
+							<p>~3s</p>
+						</div>
+						<div>
+							<img alt="Font Awesome Loaded" src="images/font-awesome-loaded.png" />
+							<p>~9s</p>
+						</div>
+				</section>
+				<section>
 					<h2>font-display</h2>
 					<pre><code class="css">body {
   font-display: swap; // block, fallback, optional
@@ -271,8 +302,27 @@ AddType image/webp .webp</code></pre>
 					<img alt="" src="images/preload-financial-times.jpg">
 				</section>
 				<section>
-					<h2>Do not use font icons</h2>
-					
+					<h2>Cache</h2>
+					<p>Expires Header en Cache-Control</p>
+					<pre><code><IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresDefault A600
+  <FilesMatch \.(html|xhtml|xml|shtml)$>
+    ExpiresDefault A600
+  </FilesMatch>
+</IfModule></code></pre>
+				</section>
+				<section>
+					<h2>Service workers</h2>
+					<img alt="" src="images/service-worker.svg">
+				</section>
+				<section>
+					<h2>HTTP2</h2>
+					<img alt="HTTP2" src="images/http2.gif" />
+				</section>
+				<section>
+					<h2>Okay. Bye.</h2>
+					<iframe src="https://kozie.github.io/thomasboard/" height="50%" width="75%"></iframe>
 				</section>
 			</div>
 		</div>
